@@ -47,5 +47,3 @@ class Ship(Sprite):
     def center_ship(self):
         """center ship on screen"""
         self.center = self.screen_rect.centerx
-
-
