@@ -12,7 +12,7 @@ class Settings:
         self.screen_width = 1200
         self.screen_height = 700
         self.bg_color = (230, 230, 230)
-
+        pygame.mixer.music.load('audio/spaceinvaders1 3.mpeg')
         self.shoot = pygame.mixer.Sound('audio/shoot.wav')
         self.explosion = pygame.mixer.Sound('audio/explosion.wav')
 

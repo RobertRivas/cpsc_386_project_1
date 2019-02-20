@@ -58,7 +58,6 @@ def check_events(ai_settings, screen, stats, sb, play_button, ship, aliens,
                               ship, aliens, bullets, mouse_x, mouse_y)
 
 
-
 def check_play_button(ai_settings, screen, stats, sb, play_button, ship,
         aliens, bullets, mouse_x, mouse_y):
 
@@ -87,6 +86,7 @@ def check_play_button(ai_settings, screen, stats, sb, play_button, ship,
         # Create a new fleet and center the ship.
         create_fleet(ai_settings, screen, ship, aliens)
         ship.center_ship()
+        pygame.mixer.music.play(5, 0.0)
 
 
 def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets,
