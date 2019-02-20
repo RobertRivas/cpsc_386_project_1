@@ -29,7 +29,7 @@ def fire_bullet(ai_settings, screen, ship, bullets):
     if len(bullets) < ai_settings.bullets_allowed:
         new_bullet = Bullet(ai_settings, screen, ship)
         bullets.add(new_bullet)
-        pygame.mixer.Sound.play(ai_settings.laser)
+        pygame.mixer.Sound.play(ai_settings.shoot)
 
 
 def check_keyup_events(event, ship):
@@ -136,6 +136,7 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship,
     # remove bullets that have collided.
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
     if collisions:
+        pygame.mixer.Sound.play(ai_settings.explosion)
         for aliens in collisions.values():
             stats.score += ai_settings.alien_points * len(aliens)
             sb.prep_score()
@@ -213,6 +214,7 @@ def change_fleet_direction(ai_settings, aliens):
 def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
     """respond to ship being hit by alien"""
     if stats.ships_left > 0:
+        pygame.mixer.Sound.play(ai_settings.explosion)
 
         # decrement ships left.
         stats.ships_left -= 1
