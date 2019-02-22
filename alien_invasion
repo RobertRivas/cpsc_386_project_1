@@ -10,6 +10,8 @@ from button import Button
 
 from ship import Ship
 
+from bunker import Bunker
+
 import game_functions as gf
 
 from pygame.sprite import Group
@@ -33,6 +35,7 @@ def run_game():
     # make ship
 
     ship = Ship(ai_settings, screen)
+    bunker = Bunker(ai_settings, screen)
 
     # Make a group to store bullets in and group of aliens.
     bullets = Group()
@@ -54,7 +57,7 @@ def run_game():
                               bullets)
             gf.update_aliens(ai_settings, screen, stats, sb, ship, aliens,
                              bullets)
-        gf.update_screen(ai_settings, screen, stats, sb, ship, aliens,
+        gf.update_screen(ai_settings, screen, stats, sb, ship, bunker, aliens,
                          bullets, play_button)
 
 

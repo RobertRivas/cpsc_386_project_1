@@ -35,6 +35,8 @@ class Settings:
         # fleet_direction of 1 represents right; -1 left.
         self.fleet_direction = 1
 
+        self.bunkers = 3
+
     def initialize_dynamic_settings(self):
         """Initialize settings that change throughout the game."""
         self.ship_speed_factor = 10

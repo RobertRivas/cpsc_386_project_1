@@ -89,7 +89,7 @@ def check_play_button(ai_settings, screen, stats, sb, play_button, ship,
         pygame.mixer.music.play(5, 0.0)
 
 
-def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets,
+def update_screen(ai_settings, screen, stats, sb, ship, bunker, aliens, bullets,
         play_button):
 
     """update images on the screen and flip to new screen"""
@@ -100,6 +100,7 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets,
         bullet.draw_bullet()
 
     ship.blitme()
+    bunker.blitme()
     aliens.draw(screen)
 
     # Draw the score information.
