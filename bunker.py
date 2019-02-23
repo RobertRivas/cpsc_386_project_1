@@ -5,7 +5,6 @@ import pygame
 from pygame.sprite import Sprite
 
 
-
 class Bunker(Sprite):
 
     def __init__(self, ai_settings, screen):
@@ -20,14 +19,6 @@ class Bunker(Sprite):
         self.rect.x = self.rect.left
         self.rect.y = self.rect.bottom + 250
 
-        self.bunkers = self.ai_settings.bunkers
-
-
     def blitme(self):
         """Draw the bunker at its current location."""
         self.screen.blit(self.image, self.rect)
-
-
-
-
-

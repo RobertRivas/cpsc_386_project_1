@@ -40,8 +40,7 @@ def check_keyup_events(event, ship):
         ship.moving_left = False
 
 
-def check_events(ai_settings, screen, stats, sb, play_button, ship, aliens,
-        bullets):
+def check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets):
 
     """respond to key presses and mouse events"""
     # watch for keyboard and mouse events
@@ -58,8 +57,7 @@ def check_events(ai_settings, screen, stats, sb, play_button, ship, aliens,
                               ship, aliens, bullets, mouse_x, mouse_y)
 
 
-def check_play_button(ai_settings, screen, stats, sb, play_button, ship,
-        aliens, bullets, mouse_x, mouse_y):
+def check_play_button(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, mouse_x, mouse_y):
 
     if play_button.rect.collidepoint(mouse_x, mouse_y):
         button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
@@ -89,8 +87,7 @@ def check_play_button(ai_settings, screen, stats, sb, play_button, ship,
         pygame.mixer.music.play(5, 0.0)
 
 
-def update_screen(ai_settings, screen, stats, sb, ship, bunker, aliens, bullets,
-        play_button):
+def update_screen(ai_settings, screen, stats, sb, ship, bunker, aliens, bullets, play_button):
 
     """update images on the screen and flip to new screen"""
     # redraw the screen during each pass through the loop.
@@ -128,8 +125,7 @@ def update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets):
                                   aliens, bullets)
 
 
-def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship,
-        aliens, bullets):
+def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, bullets):
     """respond to bullet alien collisions"""
 
     # Check for any bullets that have hit aliens.
@@ -220,7 +216,6 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
         # decrement ships left.
         stats.ships_left -= 1
 
-
         # Update scoreboard.
         sb.prep_ships()
         # Empty the list of aliens and bullets.
@@ -239,8 +234,7 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
         pygame.mouse.set_visible(True)
 
 
-def check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens,
-        bullets):
+def check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens, bullets):
     """Check if any aliens have reached the bottom of the screen."""
     screen_rect = screen.get_rect()
     for alien in aliens.sprites():
@@ -268,8 +262,3 @@ def check_high_score(stats, sb):
     if stats.score > stats.high_score:
         stats.high_score = stats.score
         sb.prep_high_score()
-
-
-
-
-
